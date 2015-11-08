@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
+    <title>A very big title</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href='http://fonts.googleapis.com/css?family=RobotoDraft:400,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/minified/normalize-min.css">
+    <link rel="stylesheet" href="assets/css/minified/animations-min.css">
+    <link rel="stylesheet" href="assets/css/minified/main-min.css">
+
+
+  </head>
+  <body>
+    <div class="message"><span>Thank you for your trust!</span></div>
+    <div class="modal-overlay" id="modal-overlay" onclick="Utils.closeModal(document.querySelector('.close-modal')); return false;"></div>
+    <div id="modal">
+        <div class="header">
+            <div class="title">
+                <h1 class="title">Add product</h1>
+                <h2 class="subtitle">(Second-hand Car)</h2>
+            </div>
+            
+            <a href="#" data-modalId="modal" data-overlayId="modal-overlay" class="close-modal" onclick="Utils.closeModal(this); return false;">X</a>
+            <div class="clear"></div>
+            <p><span>Category</span>: Automobiles</p>
+
+        </div>
+        <div class="forms">
+            <form action="#">
+                <div class="left-form">
+                    <div class="input on-focus">
+                        <input type="text"  placeholder="Title of anouncement" id="title" data-condition="require" onkeyup="Formular.verifyRequiredField(this, event)"  onblur="Formular.verifyRequiredField(this, '')" />
+                        <div class="tool-tip slideIn right">Please do not leave this empty.</div>
+                    </div>
+                    <div class="select-input make on-focus">
+                        <span class="arr"></span>
+                        <select onchange="Formular.changeMake(this);" onblur="Formular.verifyIfSelected(this)" data-imgId="makeImage">
+                            <option>Make/Brand</option>
+                            <option>Saab</option>
+                            <option>Opel</option>
+                            <option>Audi</option>
+                        </select>
+                        <div class="tool-tip slideIn right">Please select a brand.</div>
+                        <img src="assets/images/default.png" height="36" id="makeImage">
+                    </div>
+                    <div class="input on-focus">
+
+                        <input type="text" placeholder="Manufacturing year" id="year" data-condition="number" onkeyup="Formular.numberField(this, event);" onblur="Formular.numberField(this, '')" />
+                        <div class="tool-tip slideIn right">Please do not leave this empty.</div>
+                    </div>
+                    <div class="input on-focus">
+                        <input type="text" placeholder="Mileage" id="mileage" data-condition="number" onkeyup="Formular.numberField(this, event);" onblur="Formular.numberField(this, '')"/>
+                        <div class="tool-tip slideIn right">Please do not leave this empty.</div>
+                    </div>
+                    <div class="select-input on-focus">
+                        <span class="arr"></span>
+                        <select onblur="Formular.verifyIfSelected(this)" onchange="Formular.verifyIfSelected(this)">
+                            <option>Fuel type</option>
+                            <option>Petrol</option>
+                            <option>Diesel</option>
+                            <option>LPG</option>
+                        </select>
+                        <div class="tool-tip slideIn right">Please select a fuel type.</div>
+                    </div>
+                    <div class="input color on-focus">
+                        <!-- <label for="color">Color</label> -->
+                        <div class="clear"></div>
+                        <input type="text" placeholder="Color: #000" id="color" data-condition="require" data-colorPreview="color-preview" onkeyup="Formular.changeColor(this);"  onkeydown="Formular.changeColor(this);" onblur="Formular.verifyRequiredField(this, '')"/>
+                        <div class="tool-tip slideIn right">Please do not leave this empty.</div>
+                        <div class="color-preview" id="color-preview"></div>
+                    </div>
+
+                </div>
+                <div class="right-form"> 
+                   <div class="radio-input on-focus">
+                        <span>Vehicle damaged</span>
+                        <div class="clear"></div>
+                        <div class="radio-button">
+                            <input name="damaged" type="radio" id="damaged-yes" data-txtAreaId="if-damaged" onchange="Formular.changeDamaged(this)" />
+                            <label for="damaged-yes">Yes</label> 
+                        </div>
+                        <div class="radio-button">
+                            <input name="damaged" type="radio"  id="damaged-no" data-txtAreaId="if-damaged" onchange="Formular.changeDamaged(this)" checked/>
+                            <label for="damaged-no" >No</label>                         
+                        </div>
+                        <textarea id="if-damaged" disabled data-condition="require" onkeyup="Formular.verifyRequiredField(this, event)"  onblur="Formular.verifyRequiredField(this, '')"></textarea>
+                        <div class="tool-tip slideIn left">If it has damages...</div>
+                    </div>
+                    <div class="input on-focus">
+                        <input type="text" placeholder="Price" id="price" data-condition="number" onkeyup="Formular.numberField(this, event);" onblur="Formular.numberField(this, '')"/>
+                        <div class="tool-tip slideIn left">Please do not leave this empty.</div>
+                    </div>
+                    <div class="select-input on-focus">
+                        <span class="arr"></span>
+                        <select onblur="Formular.verifyIfSelected(this)" onchange="Formular.verifyIfSelected(this)">
+                            <option>Currency</option>
+                            <option>USD</option>
+                            <option>EUR</option>
+                            <option>LEI</option>
+                        </select>
+                        <div class="tool-tip slideIn left">Please select a currency.</div>
+                    </div>
+                    <div class="input on-focus">
+                        <textarea id="description" placeholder="Description" data-condition="require" onkeyup="Formular.verifyRequiredField(this, event)"  onblur="Formular.verifyRequiredField(this, '')"></textarea>
+                        <div class="tool-tip slideIn left" >Please write a description.</div>
+                    </div>
+                    
+
+                </div>
+                <div class="buttons">
+                    <input type="button" value = "SAVE" class="save" onclick="Formular.verifyAll()">
+                    <button class="cancel" onclick="Utils.closeModal(document.querySelector('.close-modal')); return false;">CANCEL</button>
+                </div>
+            </form>
+            
+        </div>
+        
+    </div>
+    <div class="wrapper">
+        <h1>A VERY BIG TITLE </h1>  
+        <a href="#" data-modalId="modal" data-overlayId="modal-overlay" class="add-product" onclick="Utils.openModal(this); return false;">ADD PRODUCT</a>
+    </div>
+    <script type="text/javascript" src="assets/mockups/make.js"></script>
+    <script type="text/javascript" src="assets/js/minified/utils-min.js"></script>
+    <script type="text/javascript" src="assets/js/minified/form-min.js"></script>
+  </body>

@@ -1,0 +1,580 @@
+body{
+	background-image: url('../images/bg.jpg');
+	background-size: 100% ;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: relative;
+	z-index: 1;
+}
+
+.clear{
+	clear: both;
+}
+
+select option:first-child{
+	display:none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+button:focus, input:focus{
+	outline: none;
+}
+
+.message{
+	position: fixed;
+	top:0;
+	height:0px;
+	width:100%;
+	background-color:#27cf8b;
+	color:white;
+	text-align: center;
+	z-index:100;
+	overflow: hidden;
+}
+
+.message span{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 35px;
+}
+
+.message.reveal{
+	-webkit-animation: revealInAndRevealOut 4s forwards;
+    animation: revealInAndRevealOut 4s forwards;
+}
+
+.modal-overlay{
+	z-index: -1;
+	width:100%;
+	height: 100%;
+	transition: all 0.3s;
+	opacity:0;
+	position: fixed;
+	overflow: hidden;
+	background-color: #000;
+}
+
+.modal-overlay.opened{
+	opacity:0.6;
+	display: block;
+	z-index:8;
+}
+
+
+#modal{
+	left:50%;
+	transform:translateX(-50%);
+	width:700px;
+	min-height:400px;
+	background-color: #fff;
+	border-radius: 5px;
+	position: absolute;
+	top:-600px;
+	z-index:9;
+	transition: top 0.3s;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding: 0 12px;
+	margin-bottom: 20px
+}
+
+#modal.opened{
+	display:block;
+	top:15%;
+	
+}
+
+#modal .close-modal{
+	float: right;
+	font-family: RobotoDraft;
+	font-weight: 400;
+	font-size: 20px;
+	text-decoration: none;
+	color:#000;
+	margin-top:6px;
+}
+
+.header{
+	float: left;
+	width:100%;
+
+	margin-bottom: 12px;
+}
+
+.header .title{
+	float:left;
+}
+
+.header .title .title{
+	float:left;
+}
+
+.header .title .subtitle{
+	float:left;
+	margin-left:4px;
+	margin-top: 16px;
+}
+
+.header .title .title{
+	font-family: 'RobotoDraft', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.header .title .subtitle{
+	font-family: 'RobotoDraft', sans-serif;
+	font-size: 13px; 
+	font-weight: 300;
+}
+
+.header p{
+	font-family: 'RobotoDraft', sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	float:left;
+	margin:0;
+	line-height: 0;
+}
+
+.header p span{
+	font-weight: 400;
+}
+
+.separator{
+	float:left;
+	margin-top:19px;
+	width: 100%;
+	height: 1px;
+	background-color: #27cf8b;
+	border: none;
+}
+
+.left-form{
+	float:left;
+	width:40%;
+}
+
+.right-form{
+	float: right;
+	width:40%;
+}
+
+
+.forms{
+	width:100%;
+	height:100%;
+	float:left;
+	margin-top:20px;
+	margin-bottom: 20px;
+}
+
+.forms form{
+	float:left;
+	margin-bottom: 0;
+}
+
+.forms form > div > div{
+	margin-bottom:12px;
+	float:left; 
+}
+
+.forms .input, .forms .select-input{
+	width: 80%;
+	position: relative;
+}
+
+.forms .select-input.make select{
+	width:80%;
+}
+.forms .select-input.make .arr{
+	right:20%;
+}
+
+.forms .select-input.make img{
+	float:right;
+}
+
+.forms .input:focus, .forms .select-input:focus{
+	opacity:1;
+}
+
+.forms .input:hover, .forms .select-input:hover{
+	opacity:1;
+}
+
+
+.forms .input.color input{
+	width:80%;
+}
+
+.forms .input.color .color-preview{
+	float: right;
+	width:34px;
+	height: 34px;
+	background-color: #000;
+}
+
+.forms .input input{
+	width: 100%;
+	float:left;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	border:none;
+	border-bottom: solid 2px rgba(39,207,139, 0.3);
+	border-sizing:border-box;
+	padding:6px 10px 6px 0;
+	
+	color:#3D3D3D;
+}
+
+.forms .input.error input{
+	border-bottom: solid 2px #FF6E30;
+}
+
+.forms .input.error input:hover,
+.forms .input.error input:focus{
+	border-bottom: solid 2px #FF6E30 !important;
+}
+
+
+.forms .input input:focus, .forms .input input:hover{
+	outline: none;
+	border-bottom: solid 2px rgba(39,207,139, 1);
+}
+
+.forms .select-input{
+	position: relative;
+  	display: inline-block;
+	
+}
+
+.forms .select-input select{
+	width:100%;
+	float:left;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-0-appearance: none;
+	appearance: none;
+	display: block;
+	padding:6px 10px 6px 0;
+	margin: 0;
+	border:none;
+	border-bottom: 2px solid rgba(39,207,139, 0.3);
+
+	background: #fff;
+	color: #3D3D3D;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	cursor: pointer;
+}
+
+.forms .select-input.error select{
+	border-bottom: solid 2px #FF6E30;
+}
+
+
+.forms .select-input select:focus, .forms .select-input select:hover{
+	border-bottom: 2px solid rgba(39,207,139, 1);
+}
+
+.forms .select-input.error select:focus, .forms .select-input.error select:hover{
+	border-bottom: solid 2px #FF6E30 !important;
+}
+
+.forms .select-input.make.error select:focus, .forms .select-input.make.error select:hover{
+	border-bottom: solid 2px #FF6E30 !important;
+}
+
+.forms .select-input .arr {
+  background: #fff;
+  bottom: 5px;
+  right:0;
+  position: absolute;
+  top: 5px;
+  z-index:1;
+  width: 10px;
+}
+
+
+.forms .select-input .arr:after {
+	content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    width: 5px;
+    height: 5px;
+    border-top: 1px solid #27cf8b;
+    border-right: 1px solid #27cf8b;
+    transform: rotate(135deg);
+}
+
+.forms .select-input.error .arr:after{
+	border-top: 1px solid #FF6E30;
+    border-right: 1px solid #FF6E30;
+}
+
+.forms .radio-input{
+	float:left;
+	width:80%;
+	display: inline;
+	position: relative;
+}
+
+.forms .radio-input span, .forms .radio-input label{
+	color: #3D3D3D;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.forms .radio-input label{
+	font-weight: 400;
+}
+
+.forms .radio-input .radio-button{
+	margin-left:10px;
+	float:left;
+}
+
+.forms .radio-input .radio-button:nth-child(3){
+	margin-left: 0;
+}
+
+.forms .radio-input input[type=radio]{
+    display:none;
+}
+
+.forms .radio-input label{
+  display:block !important;
+  float:left;
+  cursor: pointer;
+}
+
+.forms .radio-input input[type="radio"] + label:before {
+  content: "";  
+  display: inline-block;  
+  width: 8px;  
+  height: 8px;  
+  vertical-align:middle;
+  margin-right: 4px;
+  border-radius: 50px;
+  -webkit-border: solid 2px rgba(39,207,139, 0.4);
+  border: solid 2px rgba(39,207,139, 0.4);
+  background color: white;
+}
+
+
+.forms .radio-input input[type="radio"]:checked + label:before {
+  -webkit-border: 2px solid rgba(39,207,139, 1);
+  border: 2px solid rgba(39,207,139, 1);
+  background-color: rgba(39,207,139, 1);
+  width:8px;
+  height:8px;
+  opacity: 1;
+}
+
+.forms textarea{
+	float:left;
+	width:100% !important;
+	height:80px;
+	margin-top:12px;
+	-webkit-border: 2px solid rgba(39,207,139, 0.4);
+  	border: 2px solid rgba(39,207,139, 0.4);
+  	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+
+}
+
+.forms textarea.error{
+	border: solid 2px #FF6E30 ;
+}
+
+.forms textarea[disabled]{
+	background-color: #F0F0F0;
+	border:none !important;
+}
+
+
+
+.forms textarea:focus, .forms textarea:hover{
+	-webkit-border: 2px solid rgba(39,207,139, 1);
+  	border: 2px solid rgba(39,207,139, 1);
+  	outline: none;
+}
+
+.forms textarea.error:focus, .forms textarea.error:hover{
+	border: solid 2px #FF6E30 !important;
+  	outline: none;
+}
+
+.forms textarea[disabled]:focus, .forms textarea[disabled]:hover{
+	border:none !important;
+}
+
+
+
+.wrapper{
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+	text-align: center;
+	z-index:3;
+}
+
+.wrapper h1{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: #fff;
+	font-size: 60px;
+}
+
+.add-product{
+	padding:10px 35px;
+	text-decoration: none;
+	border-radius: 5px;
+	color:white;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	border:solid 1px #27cf8b;
+
+	text-shadow: 1px 1px 1px #000000;
+}
+
+.add-product:hover, .add-product:focus{
+	background-color:#27cf8b;
+}
+
+
+.buttons{
+	float:left;
+	width:100%;
+	display: inline-block;
+	text-align: center;
+	margin-top:8px;
+}
+
+.save, .cancel{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: #fff;
+	font-size: 15;
+	background-color: #27cf8b;
+	border:none;
+	padding:7px 35px;
+	border-radius: 5px;
+}
+
+.cancel{
+	background-color: transparent;
+	color: #000;
+}
+
+.save:hover, .cancel:hover{
+	text-decoration: underline;
+}
+
+/***********TOOLTIP***********/
+.tool-tip{
+	color: #fff;
+	background-color: rgba( 0, 0, 0, .7);
+	text-shadow: none;
+	font-size: .8em;
+	display: none;
+	-webkit-border-radius: 7px; 
+	-moz-border-radius: 7px; 
+	-o-border-radius: 7px; 
+	border-radius: 7px;	
+	text-align: center;	
+	opacity: 0;
+	z-index: 999;
+	min-width: 110px;
+	padding: 3px 8px;	
+	position: absolute;
+	cursor: default;
+
+	-webkit-transition: all 240ms ease-in-out;
+	-moz-transition: all 240ms ease-in-out;
+	-ms-transition: all 240ms ease-in-out;
+	-o-transition: all 240ms ease-in-out;
+	transition: all 240ms ease-in-out;	
+}
+
+
+.tool-tip.right{
+	top: 50%;
+	right: auto;
+	left: 106%;
+	margin-top: -15px;
+	margin-right: auto;	
+	margin-left: auto;
+}
+
+.tool-tip.left{
+	top:50%;
+	transform:translateY(-50%);
+}
+
+.tool-tip:after{
+	position: absolute;
+	bottom: -12px;
+	left: 50%;
+	margin-left: -7px;
+	content: ' ';
+	height: 0px;
+	width: 0px;
+	border: 6px solid transparent;
+    border-top-color: rgba( 0, 0, 0, .7);	
+}
+
+.tool-tip.right:after{
+	left: -5px;
+	top: 50%;	
+	margin-top: -6px;
+	bottom: auto;
+	border-top-color: transparent;	
+    border-right-color: rgba( 0, 0, 0, .7);	
+}
+
+.tool-tip.right{
+	margin-top: -19px;
+}
+
+.on-focus input.error:focus + .tool-tip, .on-focus select.error:focus + .tool-tip, .on-focus textarea.error:focus + .tool-tip{
+	display: block;
+	opacity: 1;	
+}
+
+.on-focus > input.error:focus + .tool-tip.slideIn.right, .on-focus > select.error:focus + .tool-tip.slideIn.right, .on-focus > textarea.error:focus + .tool-tip.slideIn.right{
+    -webkit-animation: slideInRight 0.24s forwards;
+    animation: slideInRight 0.24s forwards;
+}
+
+
+.tool-tip.left:after{
+	left: auto;
+	right: -12px;
+	top: 50%;
+	margin-top: -6px;
+	bottom: auto;
+	border-top-color: transparent;	
+    border-left-color: rgba( 0, 0, 0, .7);	
+}
+
+.on-focus > .tool-tip.slideIn.left{
+	right: 50%;	
+}
+
+.on-focus > input.error:focus + .tool-tip.slideIn.left, .on-focus > select.error:focus + .tool-tip.slideIn.left, .on-focus > textarea.error:focus + .tool-tip.slideIn.left{
+	-webkit-animation: slideInLeft 0.24s forwards;
+    animation: slideInLeft 0.24s forwards;
+}
