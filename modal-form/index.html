@@ -1,14 +1,14 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
-    <title>A very big title</title>
+    <title>Cars.</title>
   
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <link href='http://fonts.googleapis.com/css?family=RobotoDraft:400,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/css/minified/normalize-min.css">
     <link rel="stylesheet" href="assets/css/minified/animations-min.css">
-    <link rel="stylesheet" href="assets/css/minified/main-min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 
 
   </head>
@@ -19,19 +19,19 @@
         <div class="header">
             <div class="title">
                 <h1 class="title">Add product</h1>
-                <h2 class="subtitle">(Second-hand Car)</h2>
+                <h2 class="subtitle"> &#187; second-hand car</h2>
             </div>
             
-            <a href="#" data-modalId="modal" data-overlayId="modal-overlay" class="close-modal" onclick="Utils.closeModal(this); return false;">X</a>
+            <img src = "assets/images/x.png" data-modalId="modal" data-overlayId="modal-overlay" class="close-modal" onclick="Utils.closeModal(this); return false;" />
             <div class="clear"></div>
-            <p><span>Category</span>: Automobiles</p>
+            <p>Category: Automobiles</p>
 
         </div>
         <div class="forms">
             <form action="#">
                 <div class="left-form">
                     <div class="input on-focus">
-                        <input type="text"  placeholder="Title of anouncement" id="title" data-condition="require" onkeyup="Formular.verifyRequiredField(this, event)"  onblur="Formular.verifyRequiredField(this, '')" />
+                        <input type="text"  placeholder="Title" id="title" data-condition="require" onkeyup="Formular.verifyRequiredField(this, event)"  onblur="Formular.verifyRequiredField(this, '')" />
                         <div class="tool-tip slideIn right">Please do not leave this empty.</div>
                     </div>
                     <div class="select-input make on-focus">
@@ -110,8 +110,8 @@
 
                 </div>
                 <div class="buttons">
-                    <input type="button" value = "SAVE" class="save" onclick="Formular.verifyAll()">
-                    <button class="cancel" onclick="Utils.closeModal(document.querySelector('.close-modal')); return false;">CANCEL</button>
+                    <input type="button" value = "Save" class="save" onclick="Formular.verifyAll()">
+                    <button class="cancel" onclick="Utils.closeModal(document.querySelector('.close-modal')); return false;">Cancel</button>
                 </div>
             </form>
             
@@ -119,8 +119,9 @@
         
     </div>
     <div class="wrapper">
-        <h1>A VERY BIG TITLE </h1>  
-        <a href="#" data-modalId="modal" data-overlayId="modal-overlay" class="add-product" onclick="Utils.openModal(this); return false;">ADD PRODUCT</a>
+        <h1>SPREADING THE CARS - more easier now</h1>  
+        <h2>you are now at one step away from spreading your car</h2>  
+        <a href="#" data-modalId="modal" data-overlayId="modal-overlay" class="add-product" onclick="Utils.openModal(this); return false;">ADD CAR</a>
     </div>
     <script type="text/javascript" src="assets/mockups/make.js"></script>
     <script type="text/javascript" src="assets/js/minified/utils-min.js"></script>
